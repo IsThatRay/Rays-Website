@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Time Waster</title>
+<style>
+.Nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3c8290;
+}
+.Nav li {
+float: left;
+}
+.Nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "Arial"
+}
+.Nav a:hover {
+    background-color: #111
+}
+.NavMain {
+    background-color: #0095b3
+}
+</style>
+</head>
+<body>
+<div>
+<h1 style=font-family:"Arial">That One Website Ray Made</h1>
+<ul class="Nav">
+<li><a href="index.html">Home</a></li>
+<li><a href="Life.html">Life</a></li>
+<li><a class="NavMain" href="TimeWaster.html">Time Waster</a></li>
+</ul>
+<div>
+<p id="Score"></p>
+<script>
+var score = 0
+document.getElementById("Score").innerHTML = score
+function RaiseScore() {
+	score++
+	document.getElementById("Score").innerHTML = score
+}
+</script>
+<input type="button" value="Click Me" onclick="RaiseScore();"/>
+</body>
+</html>
