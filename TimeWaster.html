@@ -27,6 +27,16 @@ float: left;
 .NavMain {
     background-color: #0095b3
 }
+.ClickScreen {
+  float: left;
+  width: 50%;
+  background-color: grey;
+}
+.UpgradeScreen {
+  float: right;
+  width: 50%;
+  background-color: #f0f0f0;
+}
 </style>
 </head>
 <body>
@@ -37,8 +47,6 @@ float: left;
 <li><a href="Life.html">Life</a></li>
 <li><a class="NavMain" href="TimeWaster.html">Time Waster</a></li>
 </ul>
-<div>
-<p id="Score"></p>
 <script>
 var score = 0
 document.getElementById("Score").innerHTML = score
@@ -47,6 +55,13 @@ function RaiseScore() {
 	document.getElementById("Score").innerHTML = score
 }
 </script>
-<input type="button" value="Click Me" onclick="RaiseScore();"/>
+<div class="ClickScreen">
+<p id="Score"></p>
+<input type="image" src="https://vignette.wikia.nocookie.net/swordburst2/images/1/1a/NF-upgrade_crystal.png/revision/latest?cb=20171119191140" onclick="RaiseScore();"/>
+</div>
+<div class="UpgradeScreen">
+  <img src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Cursor-Click-2-icon.png" height=50 width=50/>
+  <input type="button" value="Upgrade Clicks" onclick="Upgrade();"
+</div>
 </body>
 </html>
