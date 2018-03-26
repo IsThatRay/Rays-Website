@@ -36,10 +36,6 @@ float: left;
   text-align: center;
   font-family: "Arial";
 }
-.ClickScreen h2 {
-  text-align: center;
-  font-family: "Arial";
-}
 .ClickScreen img {
   width: 100%;
   text-align: center;
@@ -83,7 +79,7 @@ function RaiseScore() {
 function CUpgrade() {
   if (score >= Ccost) {
     cAmount++;
-    scoreIncrease = Math.ceiling(scoreIncrease * 1.2);
+    scoreIncrease = Math.ceil(scoreIncrease * 1.2);
     score = score - Ccost;
     Ccost = Math.round(Ccost * 1.5);
     document.getElementById("CUpText").innerHTML = cAmount;
@@ -95,7 +91,7 @@ function CUpgrade() {
 </script>
 <div class="ClickScreen">
 <h1 id="Score">0</h1>
-<h2 id="CPC">Crystals Per Click: 1</2>
+<h1 id="CPC">Crystals Per Click: 1</h1>
 <input type="image" src="https://vignette.wikia.nocookie.net/swordburst2/images/1/1a/NF-upgrade_crystal.png/revision/latest?cb=20171119191140" onclick="RaiseScore();"/>
 </div>
 <div class="UpgradeScreen">
