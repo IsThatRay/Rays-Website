@@ -81,9 +81,11 @@ function CUpgrade() {
   if (score >= Ccost) {
     cAmount++;
     scoreIncrease++;
-    Ccost = Ccost * 1.5;
+    Ccost = round(Ccost * 1.5);
+    score = score - Ccost;
     document.getElementById("CUpText").innerHTML = cAmount;
     document.getElementById("CcostText").innerHTML = "Cost: " + Ccost;
+    document.getElementById("Score").innerHTML = score;
   }
 }
 </script>
