@@ -67,14 +67,15 @@ float: left;
 <script>
 var score = 0;
 var scoreIncrease = 1;
+var cAmount = 0;
 document.getElementById("Score").innerHTML = score;
 function RaiseScore() {
 	score++;
 	document.getElementById("Score").innerHTML = score;
 }
 function CUpgrade() {
-  var oldNum = scoreIncrease
-  var scoreIncrease = oldNum * 2;
+  cAmount++
+  var scoreIncrease = 1 + cAmount
   document.getElementById("CUpText").innerHTML = scoreIncrease;
 }
 </script>
