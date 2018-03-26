@@ -37,6 +37,15 @@ float: left;
   width: 50%;
   background-color: #f0f0f0;
 }
+.CommonUpgrade img {
+  float: left;
+}
+.CommonUpgrade h1 {
+  float: right;
+}
+.CommonUpgrade input {
+  float: right;
+}
 </style>
 </head>
 <body>
@@ -49,10 +58,15 @@ float: left;
 </ul>
 <script>
 var score = 0
+var scoreIncrease = 1
 document.getElementById("Score").innerHTML = score
 function RaiseScore() {
 	score++
 	document.getElementById("Score").innerHTML = score
+}
+function CUpgrade() {
+  scoreIncrease * 2
+  document.getElementById("CUpText").innerHTML = scoreIncrease
 }
 </script>
 <div class="ClickScreen">
@@ -60,8 +74,11 @@ function RaiseScore() {
 <input type="image" src="https://vignette.wikia.nocookie.net/swordburst2/images/1/1a/NF-upgrade_crystal.png/revision/latest?cb=20171119191140" onclick="RaiseScore();"/>
 </div>
 <div class="UpgradeScreen">
-  <img src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Cursor-Click-2-icon.png" height=50 width=50/>
-  <input type="button" value="Upgrade Clicks" onclick="Upgrade();"
+  <div class="CommonUpgrade">
+    <img src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Cursor-Click-2-icon.png" height=50 width=50/>
+    <h1 style=font-family:"Arial" id:"CUpText">Amount: 0</h1>
+    <input type="button" value="Upgrade Clicks" onclick="CUpgrade();">
+  </div>
 </div>
 </body>
 </html>
