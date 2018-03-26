@@ -77,15 +77,18 @@ function RaiseScore() {
 	score = score + scoreIncrease;
 	document.getElementById("Score").innerHTML = score;
 }
+function LowerScore(var amount) {
+  score = score - amount;
+  document.getElementById("Score").innerHTML = score;
+}
 function CUpgrade() {
   if (score >= Ccost) {
     cAmount++;
     scoreIncrease++;
     Ccost = round(Ccost * 1.5);
-    score = score - Ccost;
+    LowerScore(Ccost);
     document.getElementById("CUpText").innerHTML = cAmount;
     document.getElementById("CcostText").innerHTML = "Cost: " + Ccost;
-    document.getElementById("Score").innerHTML = score;
   }
 }
 </script>
