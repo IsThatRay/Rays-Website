@@ -72,28 +72,24 @@ var score = 0;
 var scoreIncrease = 1;
 var cAmount = 0;
 var Ccost = 10;
-document.getElementById("Score").innerHTML = score;
 function RaiseScore() {
 	score = score + scoreIncrease;
 	document.getElementById("Score").innerHTML = score;
-}
-function LowerScore(amount) {
-  score = score - amount;
-  document.getElementById("Score").innerHTML = score;
 }
 function CUpgrade() {
   if (score >= Ccost) {
     cAmount++;
     scoreIncrease++;
     Ccost = round(Ccost * 1.5);
+    score = score - Ccost;
     document.getElementById("CUpText").innerHTML = cAmount;
     document.getElementById("CcostText").innerHTML = "Cost: " + Ccost;
-    LowerScore(Ccost);
+    document.getElementById("Score").innerHTML = score;
   }
 }
 </script>
 <div class="ClickScreen">
-<h1 id="Score"></h1>
+<h1 id="Score">0</h1>
 <input type="image" src="https://vignette.wikia.nocookie.net/swordburst2/images/1/1a/NF-upgrade_crystal.png/revision/latest?cb=20171119191140" onclick="RaiseScore();"/>
 </div>
 <div class="UpgradeScreen">
