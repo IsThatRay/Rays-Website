@@ -75,7 +75,8 @@ function RaiseScore() {
 	document.getElementById("Score").innerHTML = score;
 }
 function CUpgrade() {
-  var scoreIncrease = scoreIncrease * 2;
+  var oldNum = scoreIncrease
+  var scoreIncrease = oldNum * 2;
   document.getElementById("CUpText").innerHTML = scoreIncrease;
 }
 </script>
