@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat Test</title>
+  <style>
+  .Nav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #3c8290;
+  }
+  .Nav li {
+  float: left;
+  }
+  .Nav a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-family: "Arial"
+  }
+  .Nav a:hover {
+      background-color: #111
+  }
+  .NavMain {
+      background-color: #0095b3
+  }
+  </style>
+</head>
+<body>
+  <div>
+  <h1 style=font-family:"Arial">That One Website Ray Made</h1>
+  <ul class="Nav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="Life.html">Life</a></li>
+  <li><a href="TimeWaster.html">Time Waster</a></li>
+  <li><a class="NavMain" href="Chat.html">Chat</a></li>
+  </ul>
+  <script>
+  var form = document.getElementById("MsgForm");
+  var input = document.getElementById("Input");
+  var messages = document.getElementById("Messages");
+  var socketStat = document.getElementById("Status");
+
+  var socket = new WebSocket("ws://tehrayinator.github.io/Rays-Website/Chat.html");
+
+  socket.onopen = function(event) {
+    socketStat.innerHTML = 'Connected to: ' + event.currentTarget.url;
+    socketStat.className = 'open';
+  };
+  socket.onerror = function(error){
+    console.log('NANI?! Websocket Error: ' + error);
+  };
+  form.onsubmit = function(e) {
+    e.preventDefault();
+
+    var message = input.value;
+    socket.send(message);
+
+    messages.innerHTML += '<li class="sent"><span>You:</span>' + message + '</li>';
+    input.value = "";
+
+    return false;
+  };
+  socket.onmessage = = function(event) {
+    var message = event.data;
+    messages.innerHTML += '<li class="received"><span>Other Guy:</span>' + messgae + '</li>'
+  }
+  </script>
+  <div>
+  <div id="MainWrap">
+    <h1>Chat Test</h1>
+    <div id="Status">Connecting...</div>
+    <ul id="Messages"></ul>
+
+    <form id="MsgForm" action="#" method="post">
+      <textarea id="Input" placeholder="Write you message here" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</body>
+</html>
