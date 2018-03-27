@@ -72,6 +72,8 @@
     var message = input.value;
     socket.send(message);
 
+    input.value = '';
+
     return false;
   };
   socket.onmessage = function(event) {
