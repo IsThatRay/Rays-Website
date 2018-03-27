@@ -44,7 +44,7 @@
   var messages = document.getElementById("Messages");
   var socketStat = document.getElementById("Status");
 
-  var socket = new WebSocket("ws://tehrayinator.github.io/Rays-Website/Chat.html");
+  var socket = new WebSocket("ws://echo.websocket.org");
 
   socket.onopen = function(event) {
     socketStat.innerHTML = 'Connected to: ' + event.currentTarget.url;
